@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>医薬品情報</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+
+    <header class="bg-primary">
+        <h1>医薬品情報</h1>
+    </header>
+
+    
+    <form action="" method="GET">
+        <input type="text" name="search" placeholder="医薬品名" value="{{ request.GET.search }}">
+        <input class="btn btn-primary" type="submit" value="検索">
+    </form>
+
+    <ul>
+        {% for medicine in medicines %}
+        <li>{{ medicine.name }}</li>
+        {% endfor %}
+    </ul>
+
+
+
+
+</body>
+</html>
+
