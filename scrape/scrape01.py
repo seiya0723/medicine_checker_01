@@ -62,7 +62,6 @@ def medicine_datails(medicine_url):
         print(e)
         return []
     else:
-        #全ページのリンクを抜き取る
         soup    = bs4.BeautifulSoup(result.content,"html.parser")
 
         row     = { "name":"",

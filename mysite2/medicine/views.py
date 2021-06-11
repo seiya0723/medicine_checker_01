@@ -11,13 +11,7 @@ class IndexView(View):
 
     def get(self, request, *args, **kwargs):
 
-        #検索キーワードをスペースで区切らないタイプ
-        """
-        if "search" in request.GET:
-            medicines   = Medicine.objects.filter(name__contains=request.GET["search"])
-        else:
-            medicines   = Medicine.objects.all()
-        """
+
         if "search" in request.GET:
 
             #(1)キーワードが空欄もしくはスペースのみの場合、ページにリダイレクト
@@ -37,7 +31,7 @@ class IndexView(View):
             #(4)作ったクエリを実行
             medicines   = Medicine.objects.filter(query)
         else:
-            medicines   = Medicine.objects.all()
+            medicines   = []
 
         context = { "medicines":medicines }
 
